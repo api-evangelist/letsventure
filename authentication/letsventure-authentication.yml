@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: probed
+source: live HTTP probes of https://api.lvxventures.com
+status: private-undocumented
+notes: >-
+  LVX publishes no public API program, no developer portal and no OpenAPI
+  definition, so no securityScheme could be derived. The host
+  api.lvxventures.com is nonetheless live and serves a token-authenticated
+  private API that backs the LVX platform. The scheme below is what the server
+  itself advertises in its 401 response; it is NOT provider-documented, so no
+  `Authentication` pointer is wired into apis.yml (the ergonomics check reads
+  documented authentication, which LVX does not publish).
+host: https://api.lvxventures.com
+summary:
+  types:
+  - http
+  documented: false
+  public_api_program: false
+schemes:
+- name: Token
+  type: http
+  scheme: token
+  in: header
+  parameter_name: Authorization
+  documented: false
+  evidence: >-
+    GET https://api.lvxventures.com/ -> 401 with response header
+    `WWW-Authenticate: Token` and body {"detail":"Authorization header is missing"}
+evidence:
+- probe: GET https://api.lvxventures.com/
+  status: 401
+  www_authenticate: Token
+  content_type: application/json
+  allow: GET, HEAD, OPTIONS
+- probe: GET https://api.lvxventures.com/v1/
+  status: 401
+  note: versioned path exists behind auth
+- probe: GET https://api.lvxventures.com/health
+  status: 200
+  body: '{"message":true}'
+- probe: GET https://api.lvxventures.com/openapi.json
+  status: 404
+- probe: GET https://api.lvxventures.com/docs
+  status: 404
+- probe: GET https://api.lvxventures.com/redoc
+  status: 404
+- probe: GET https://api.lvxventures.com/api/schema/
+  status: 404
+server_fingerprint:
+  server_header: uvicorn
+  note: >-
+    Python ASGI stack; the token-auth envelope and Allow header shape are
+    consistent with Django REST Framework style TokenAuthentication.
