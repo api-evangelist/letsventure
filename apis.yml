@@ -1,20 +1,50 @@
 aid: letsventure
-name: LetsVenture
-description: 'LetsVenture is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting the enrichment pipeline.'
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/letsventure.png
+name: LVX (formerly LetsVenture)
+description: 'LVX — formerly LetsVenture — is an India-based private market investing
+  platform founded in 2013 by Shanti Mohan and headquartered in Bengaluru, with teams
+  in Delhi and Mumbai. The platform connects startup founders raising capital with
+  angel investors, family offices and VCs, and has been a SEBI-regulated entity since
+  its Angel AIF was approved in 2018. Its product surface spans LVX start (early-stage
+  angel investing), LVX grow (growth-stage and co-investment deals), LVXschool (private
+  market investor education), LVX Debt (non-dilutive debt financing for startups)
+  and LVX Track (portfolio dashboards), alongside the sister platform trica. The company
+  publicly reports 35K+ startups, 14K+ investors and over Rs 1500 Cr of AIF assets
+  under management. LVX rebranded from LetsVenture in July 2025 and letsventure.com
+  now redirects to lvxventures.com. LVX operates no public developer API program: no
+  developer portal, API reference, OpenAPI definition or SDKs were found, and the
+  platform-backing API at api.lvxventures.com is a private token-authenticated service.'
 url: https://raw.githubusercontent.com/api-evangelist/letsventure/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - accel
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Fintech
+- Venture Capital
+- Angel Investing
+- Private Markets
+- Investment Platform
+- Startup Funding
+- India
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,4 +53,33 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://www.letsventure.com
+  url: https://lvxventures.com
+- type: Blog
+  url: https://lvxventures.com/blogs
+- type: Support
+  url: https://lvxventures.com/contact-us
+- type: FAQ
+  url: https://lvxventures.com/faq
+- type: TermsOfService
+  url: https://lvxventures.com/terms
+- type: PrivacyPolicy
+  url: https://lvxventures.com/privacy
+- type: About
+  url: https://lvxventures.com/about-us
+- type: Press
+  url: https://lvxventures.com/press
+- type: News
+  url: https://lvxventures.com/news
+- type: Newsletter
+  url: https://lvxventures.com/newsletters
+- type: Portfolio
+  url: https://lvxventures.com/portfolio
+- type: LLMsTxt
+  url: llms/letsventure-llms.txt
+- type: DomainSecurity
+  url: security/letsventure-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
