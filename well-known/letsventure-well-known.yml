@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/* on LVX (formerly LetsVenture) hosts
+notes: >-
+  No .well-known discovery documents are published on any LVX host. Every probed
+  path returned 404. This is a recorded negative result, not a gap in the probe.
+  No apis.yml WellKnown pointer is emitted because no document was found.
+hosts:
+- host: https://lvxventures.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.letsventure.com
+  note: 301 redirects to https://lvxventures.com (July 2025 rebrand)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.lvxventures.com
+  note: private platform API, token-authenticated
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
