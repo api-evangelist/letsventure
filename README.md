@@ -64,29 +64,84 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-LVX — formerly LetsVenture — is an India-based private market investing platform founded in 2013 by Shanti Mohan and headquartered in Bengaluru, with teams in Delhi and Mumbai. It connects startup founders raising capital with angel investors, family offices and VCs, and has been a SEBI-regulated entity since its Angel AIF was approved in 2018.
+LVX — formerly LetsVenture — is an India-based private market investing platform founded in 2013 by Shanti Mohan and headquartered in Bengaluru, with teams in Delhi and Mumbai. The platform connects startup founders raising capital with angel investors, family offices and VCs, and has been a SEBI-regulated entity since its Angel AIF was approved in 2018. Its product surface spans LVX start (early-stage angel investing), LVX grow (growth-stage and co-investment deals), LVXschool (private market investor education), LVX Debt (non-dilutive debt financing for startups) and LVX Track (portfolio dashboards), alongside the sister platform trica. The company publicly reports 35K+ startups, 14K+ investors and over Rs 1500 Cr of AIF assets under management. LVX rebranded from LetsVenture in July 2025 and letsventure.com now redirects to lvxventures.com. LVX operates no public developer API program: no developer portal, API reference, OpenAPI definition or SDKs were found, and the platform-backing API at api.lvxventures.com is a private token-authenticated service.
 
-Products: **LVX start** (early-stage angel investing), **LVX grow** (growth-stage and co-investment), **LVXschool** (investor education), **LVX Debt** (non-dilutive debt financing) and **LVX Track** (portfolio dashboards), alongside the sister platform [trica](https://www.trica.co).
+**Areas:** Company · Fintech · Venture Capital · Angel Investing · Private Markets · Investment Platform · Startup Funding · India
 
-Backed by: accel — https://lvxventures.com
+## LVX (formerly LetsVenture) on APIs.io
 
-## Enrichment findings (2026-07-19)
+Everything profiled for LVX (formerly LetsVenture) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/letsventure/](https://apis.io/providers/letsventure/)** — or go straight to one of the APIs or properties below.
 
-- **Rebrand.** `letsventure.com` now **301-redirects to `lvxventures.com`**. The company announced the LetsVenture → LVX rebrand on 2025-07-09.
-- **No public API program.** No developer portal, API reference, OpenAPI/Swagger definition, SDKs, CLI, MCP server, webhooks or Postman collection were found. `api.`/`developer.`/`docs.letsventure.com` do not resolve.
-- **Private platform API discovered.** `api.lvxventures.com` is live: a Python/ASGI (`uvicorn`) service returning `401` with `WWW-Authenticate: Token`, a versioned `/v1/` path behind auth, and `/health` → `200`. No public spec is served (`/openapi.json`, `/docs`, `/redoc`, `/api/schema/` all `404`). Captured in `authentication/`.
-- **llms.txt published.** `https://lvxventures.com/llms.txt` returns `200` — a genuine, auto-generated full-site dump (1.4 MB). Saved verbatim to `llms/`.
-- **No `.well-known` surface.** Every probed discovery document returns `404` on all hosts — recorded in `well-known/`.
-- **No vulnerability-disclosure program or trust center** found by probe.
-- **Domain security probed**: TLS 1.3, HSTS (max-age 31536000), SPF and DMARC (`quarantine`) present; **no DNSSEC, no CAA**.
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Dir | File | Method |
-|---|---|---|
-| `llms/` | `letsventure-llms.txt` | searched (verbatim `/llms.txt`) |
-| `well-known/` | `letsventure-well-known.yml` | searched (all 404 — negative result) |
-| `security/` | `letsventure-domain-security.yml` | probed |
-| `authentication/` | `letsventure-authentication.yml` | probed (private, undocumented) |
+#### Security (2)
 
-Artifact types that require a public OpenAPI or a published developer surface — `openapi/`, `mcp/`, `skills/`, `overlays/`, `packages/`, `sandbox/`, `conventions/`, `changelog/`, `cli/`, `components/`, `data-model/`, `errors/`, `scopes/`, `conformance/`, `lifecycle/`, `asyncapi/`, `grpc/` — were **skipped rather than fabricated**: LVX publishes none of them.
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Letsventure Authentication](https://apis.io/security/letsventure/letsventure-authentication/)
+- [Letsventure Domain Security](https://apis.io/security/letsventure/letsventure-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://lvxventures.com)
+- [Support](https://lvxventures.com/contact-us)
+- [Blog](https://lvxventures.com/blogs)
+- [Terms of service](https://lvxventures.com/terms)
+- [Privacy policy](https://lvxventures.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 11.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 21.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/letsventure/](https://apis.io/providers/letsventure/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for LVX (formerly LetsVenture): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/letsventure/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
